@@ -18,6 +18,18 @@ const paintCards = arr => {
   for (const card of arr) {
     const { pair, image } = card;
     const cardItem = document.createElement('li');
+    cardItem.classList.add('card__item');
+    cardItem.setAttribute('data-pair', pair);
+    const backImage = document.createElement('div');
+    backImage.classList.add('card__back');
+    backImage.style.backgroundImage = 'url(../../assets/images/back-card.png)';
+    const frontImage = document.createElement('div');
+    frontImage.style.backgroundImage = `url(${image})`;
+    frontImage.classList.add('card__front');
+
+    cardItem.appendChild(frontImage);
+    cardItem.appendChild(backImage);
+    cardList.appendChild(cardItem);
   }
 };
 
@@ -28,6 +40,7 @@ const fetchCards = url => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      paintCards(data);
     });
 };
 
