@@ -13,8 +13,33 @@
     
     <body>
         <div class="page">
-            <header class="page__header">Header</header>
-            <main class="page__main">Main</main>
+            <header class="page__header">
+                 <h1 class="main__title">pokemon go</h1>
+
+            </header>
+            <main class="page__main">
+                <form action="" class="page__form">
+                    <div>
+                        <label for="fourCards" class="form__label">
+                            <input id="fourCards" type="radio" value="4" name="numberOfCards" class="form__input"
+                            checked />4</label>
+                    </div>
+                    <div>
+                        <label for="sixCards" class="form__label">
+                            <input id="sixCards" type="radio" value="6" name="numberOfCards" class="form__input"
+                            />6</label>
+                    </div>
+                    <div>
+                        <label for="eightCards" class="form__label">
+                            <input id="eightCards" type="radio" value="8" name="numberOfCards" class="form__input"
+                            />8</label>
+                    </div>
+                    <button class="form__button" type="button">comenzar</button>
+                </form>
+                <section class="page__board">
+                    <ul class="card__list"></ul>
+                </section>
+            </main>
             <script type="text/javascript" src="assets/js/main.js"></script>
         </div>
     </body>
