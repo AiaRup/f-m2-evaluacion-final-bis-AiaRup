@@ -29,7 +29,7 @@ const paintCards = arr => {
     backImage.classList.add('card__back');
     backImage.style.backgroundImage = `url(${image})`;
     const frontImage = document.createElement('div');
-    frontImage.style.backgroundImage = 'url(../assets/images/back-card.png)';
+    frontImage.style.backgroundImage = 'url(assets/images/back-card.png)';
     frontImage.classList.add('card__front');
 
     cardItem.appendChild(backImage);
