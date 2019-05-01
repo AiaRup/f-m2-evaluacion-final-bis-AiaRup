@@ -22,13 +22,13 @@ const paintCards = arr => {
     cardItem.setAttribute('data-pair', pair);
     const backImage = document.createElement('div');
     backImage.classList.add('card__back');
-    backImage.style.backgroundImage = 'url(../../assets/images/back-card.png)';
+    backImage.style.backgroundImage = `url(${image})`;
     const frontImage = document.createElement('div');
-    frontImage.style.backgroundImage = `url(${image})`;
+    frontImage.style.backgroundImage = 'url(../../assets/images/back-card.png)';
     frontImage.classList.add('card__front');
 
-    cardItem.appendChild(frontImage);
     cardItem.appendChild(backImage);
+    cardItem.appendChild(frontImage);
     cardList.appendChild(cardItem);
   }
 };
