@@ -6,18 +6,15 @@ let numOfFlipped = 0;
 let numOfPairs = 0;
 
 const checkPair = card => {
+  // if it's a first card
   if (!numOfFlipped) {
     numOfFlipped++;
     firstCard = card;
-    console.log('first', firstCard);
-    console.log('flipped', numOfFlipped);
   } else {
+    // second card
     numOfFlipped++;
     secondCard = card;
-    console.log('first', firstCard);
-    console.log('flipped', numOfFlipped);
-    console.log('secondCard', secondCard);
-    // if match
+    // check if match
     if (secondCard === firstCard) {
       numOfFlipped = 0;
       numOfPairs++;
@@ -26,9 +23,9 @@ const checkPair = card => {
         console.log('winner');
       }
     } else {
+      // not a match
       numOfFlipped = 0;
       const cards = document.querySelectorAll('.card__item');
-
       for (const card of cards) {
         if (card.dataset.pair === firstCard || card.dataset.pair === secondCard) {
           setTimeout(() => {

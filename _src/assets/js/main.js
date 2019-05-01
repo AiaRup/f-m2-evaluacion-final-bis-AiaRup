@@ -8,7 +8,6 @@ const onSelectNumberOfCards = event => {
 const onLoad = () => {
   // get data from local storage of exist
   const userSelection = getData();
-
   if (userSelection) {
     const indexOfSelection = [...radioInputs].findIndex(input => input.value === userSelection);
     radioInputs[indexOfSelection].checked = true;
