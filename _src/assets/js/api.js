@@ -8,7 +8,6 @@ const fetchButton = document.querySelector('.form__button');
 const basicUrl = 'https://raw.githubusercontent.com/Adalab/cards-data/master/';
 
 const getNumberOfCards = () => {
-  const radioInputs = document.querySelectorAll('.form__input');
   const inputSelected = [...radioInputs].find(input => input.checked === true);
   return inputSelected.value;
 };
