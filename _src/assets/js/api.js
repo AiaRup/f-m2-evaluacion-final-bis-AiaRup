@@ -15,6 +15,7 @@ const getNumberOfCards = () => {
 const onCardClick = event => {
   const { currentTarget: cardClicked } = event;
   cardClicked.classList.add('flip');
+  checkPair(cardClicked.dataset.pair);
 };
 
 const paintCards = arr => {
