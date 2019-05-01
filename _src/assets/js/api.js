@@ -19,6 +19,7 @@ const onCardClick = event => {
 };
 
 const paintCards = arr => {
+  cardList.innerHTML = '';
   for (const card of arr) {
     const { pair, image } = card;
     const cardItem = document.createElement('li');

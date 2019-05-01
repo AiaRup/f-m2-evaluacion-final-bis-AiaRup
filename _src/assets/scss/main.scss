@@ -5,8 +5,9 @@
   margin: 0;
   padding: 30px;
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  grid-gap: 30px;
+  grid-template-columns: repeat(4, 150px);
+  grid-gap: 50px;
+  justify-content: center;
 }
 
 .card__item {
