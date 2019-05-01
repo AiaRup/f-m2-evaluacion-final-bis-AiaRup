@@ -5,13 +5,17 @@ const cardList = document.querySelector('.card__list');
 const fetchButton = document.querySelector('.form__button');
 
 // vaiables to work with
-
 const basicUrl = 'https://raw.githubusercontent.com/Adalab/cards-data/master/';
 
 const getNumberOfCards = () => {
   const radioInputs = document.querySelectorAll('.form__input');
   const inputSelected = [...radioInputs].find(input => input.checked === true);
   return inputSelected.value;
+};
+
+const onCardClick = event => {
+  const { currentTarget: cardClicked } = event;
+  cardClicked.classList.add('flip');
 };
 
 const paintCards = arr => {
@@ -29,6 +33,8 @@ const paintCards = arr => {
 
     cardItem.appendChild(backImage);
     cardItem.appendChild(frontImage);
+
+    cardItem.addEventListener('click', onCardClick);
     cardList.appendChild(cardItem);
   }
 };
