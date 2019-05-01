@@ -1,6 +1,5 @@
 'use strict';
 const radioInputs = document.querySelectorAll('.form__input');
-let numOfPairs = 0;
 let numOfCards = 0;
 
 const onSelectNumberOfCards = event => {
@@ -14,12 +13,10 @@ const onLoad = () => {
     const indexOfSelection = [...radioInputs].findIndex(input => input.value === userSelection);
     radioInputs[indexOfSelection].checked = true;
     numOfCards = parseInt(radioInputs[indexOfSelection].value);
-    numOfPairs = numOfCards / 2;
   } else {
     const [firstChoice] = radioInputs;
     firstChoice.checked = true;
     numOfCards = parseInt(firstChoice.value);
-    numOfPairs = numOfCards / 2;
   }
 
   // add event listeners to radio buttons
