@@ -4,6 +4,7 @@ let firstCard = 0;
 let secondCard = 0;
 let numOfFlipped = 0;
 let numOfPairs = 0;
+let timer = '';
 
 const checkPair = card => {
   // if it's a first card
@@ -21,6 +22,10 @@ const checkPair = card => {
       // check if winning
       if (numOfPairs === numOfCards / 2) {
         console.log('winner');
+        console.log(counter);
+        clearInterval(timer);
+        numOfPairs = 0;
+        numOfFlipped = 0;
       }
     } else {
       // not a match

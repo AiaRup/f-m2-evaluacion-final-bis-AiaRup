@@ -3,12 +3,15 @@
 // elements to work with
 const cardList = document.querySelector('.card__list');
 const fetchButton = document.querySelector('.form__button');
+const pageTimer = document.querySelector('.page__timer');
 
 // vaiables to work with
 const basicUrl = 'https://raw.githubusercontent.com/Adalab/cards-data/master/';
+let counter = 0;
 
 const getNumberOfCards = () => {
   const inputSelected = [...radioInputs].find(input => input.checked === true);
+  numOfCards = parseInt(inputSelected.value);
   return inputSelected.value;
 };
 
@@ -47,7 +50,15 @@ const fetchCards = url => {
     .then(response => response.json())
     .then(data => {
       console.log(data);
+      // resetGame();
       paintCards(data);
+      // start clock
+      counter = 0;
+      pageTimer.innerHTML = counter;
+      timer = setInterval(() => {
+        counter++;
+        pageTimer.innerHTML = counter;
+      }, 1000);
     });
 };
 
